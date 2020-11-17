@@ -941,7 +941,7 @@ def main():
             
             model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
             
-            history = model.fit(X_final_train, y_final_train, epochs=epochs, validation_data=(X_final_val, y_final_val), batch_size=batch_size)
+            history = model.fit(X_final_train, y_final_train.values, epochs=epochs, validation_data=(X_final_val, y_final_val.values), batch_size=batch_size)
             st.subheader('Learning Curve: ')
             epochs = range(epochs)
             loss = history.history['loss']
@@ -1123,7 +1123,7 @@ def main():
             
             model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
             
-            history = model.fit(X_final_train, y_final_train, epochs=epochs, validation_data=(X_final_val, y_final_val), batch_size=batch_size)
+            history = model.fit(X_final_train, y_final_train.values, epochs=epochs, validation_data=(X_final_val, y_final_val.values), batch_size=batch_size)
             st.subheader('Learning Curve: ')
             epochs = range(epochs)
             loss = history.history['loss']
