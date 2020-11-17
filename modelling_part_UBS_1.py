@@ -117,11 +117,11 @@ def main():
       #  'Location Sales Volume Actual', 'Years In Database', 'Square Footage',
       #  'Credit Score Alpha', 'Grocery_within_Zip',
       #  'Supermarket_within_5_miles', 'Google_Scores', 'Google_Reviews']])
-        x_train = pd.read_csv('G://google download/Research/UBS_pitch/final_train_features_3.csv')
-        y_train = pd.read_csv('G://google download/Research/UBS_pitch/final_train_labels_3.csv')
+        x_train = pd.read_csv(os.path.join('final_train_features_3.csv'))
+        y_train = pd.read_csv(os.path.join('final_train_labels_3.csv'))
         
-        x_test = pd.read_csv('G://google download/Research/UBS_pitch/final_test_features_3.csv')
-        y_test = pd.read_csv('G://google download/Research/UBS_pitch/final_test_labels_3.csv')                                                                                                          
+        x_test = pd.read_csv(os.path.join('final_test_features_3.csv'))
+        y_test = pd.read_csv(os.path.join('final_test_labels_3.csv'))                                                                                                          
 
         
         return x_train,x_test,y_train,y_test
@@ -186,13 +186,13 @@ def main():
     
     @st.cache(persist=True)
     def explore_data_2(dataset=None):
-        df_2 = pd.read_csv('G://google download/Research/UBS_pitch/closure_history_1.csv')
+        df_2 = pd.read_csv(os.path.join('closure_history_1.csv'))
         #df2 = pd.read_csv('G://google download/Research/UBS_pitch/closure_history_1.csv')
         return df_2 
     #df = load_data()
     
     def explore_data_3(dataset=None):
-        df_3 = pd.read_csv('G://google download/Research/UBS_pitch/increased_stores_1.csv')
+        df_3 = pd.read_csv(os.path.join('increased_stores_1.csv'))
         #df2 = pd.read_csv('G://google download/Research/UBS_pitch/closure_history_1.csv')
         return df_3 
     #df = load_data()
@@ -910,11 +910,11 @@ def main():
 
         if st.sidebar.button("Classify", key='classify'):
             st.subheader("Neural Network Ensemble Results: ")
-            train_predictions = pd.read_csv('G://google download/Research/UBS_pitch/final_final_train_predictions_2.csv')
+            train_predictions = pd.read_csv(os.path.join('final_final_train_predictions_2.csv'))
             train_predictions_2 = copy.deepcopy(train_predictions)
             train_predictions_2 = train_predictions_2[list(selected_features)]
             
-            test_predictions = pd.read_csv('G://google download/Research/UBS_pitch/final_final_test_predictions_2.csv')
+            test_predictions = pd.read_csv(os.path.join('final_final_test_predictions_2.csv'))
             test_predictions_2 = copy.deepcopy(test_predictions)
             test_predictions_2 = test_predictions_2[list(selected_features)]
             
