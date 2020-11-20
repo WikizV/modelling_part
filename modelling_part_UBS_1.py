@@ -941,14 +941,14 @@ def main():
             
             model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
             
-            history = model.fit(X_final_train, y_final_train.values, epochs=epochs, validation_data=(X_final_val, y_final_val.values), batch_size=batch_size)
+            history = model.fit(X_final_train.values, y_final_train.values, epochs=epochs, validation_data=(X_final_val.values, y_final_val.values), batch_size=batch_size)
             st.subheader('Learning Curve: ')
             epochs = range(epochs)
             loss = history.history['loss']
             val_loss = history.history['val_loss']
                 
-            acc = history.history['accuracy']
-            val_acc = history.history['val_accuracy']
+            acc = history.history['acc']
+            val_acc = history.history['val_acc']
             
             df_loss = pd.DataFrame(data=loss, columns=["loss"])
             df_loss['cat'] = 'training_loss'
@@ -1123,14 +1123,14 @@ def main():
             
             model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
             
-            history = model.fit(X_final_train, y_final_train.values, epochs=epochs, validation_data=(X_final_val, y_final_val.values), batch_size=batch_size)
+            history = model.fit(X_final_train.values, y_final_train.values, epochs=epochs, validation_data=(X_final_val.values, y_final_val.values), batch_size=batch_size)
             st.subheader('Learning Curve: ')
             epochs = range(epochs)
             loss = history.history['loss']
             val_loss = history.history['val_loss']
                 
-            acc = history.history['accuracy']
-            val_acc = history.history['val_accuracy']
+            acc = history.history['acc']
+            val_acc = history.history['val_acc']
             
             df_loss = pd.DataFrame(data=loss, columns=["loss"])
             df_loss['cat'] = 'training_loss'
